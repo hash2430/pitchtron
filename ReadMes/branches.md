@@ -1,3 +1,12 @@
+Pitchtron
+============
+![](https://www.dropbox.com/s/6i8vgk03glz0ztz/Pitchtron_logo.png?dl=1)
+
+* Prosody transfer toolkit where you don't need stylish training DB.
+* We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies.
+* Hard pitchtron is for strictly transferring the prosody thus, the sentence structure of reference audio and target sentence better match.
+* Soft pitchtron pursues natural sounding prosody transfer even the reference audio and target sentence are totally different in content.  
+
 Differences of three branches
 ====================
 * All three branches provided here are for **prosody transfer.**

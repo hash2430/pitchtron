@@ -1,4 +1,4 @@
-# preprocessing steps to run for multi-speaker Korean TTS
+# Preprocessing steps to run for multi-speaker Korean TTS
 ```
 python preprocess.py --dataset={following keywords}
 ```

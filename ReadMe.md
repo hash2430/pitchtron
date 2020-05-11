@@ -197,3 +197,14 @@ python inference_different_speaker_relative_f0_scale.py
 ```
 python inference_gst_tts.py 
 ```
+Acknowledgements
+============
+1. This material is based upon work supported by the Ministry of Trade, Industry & Energy (MOTIE, Korea) under Industrial Technology Innovation Program (No. 10080667, Development of conversational speech synthesis technology to express emotion and personality of robots through sound source diversification).
+2. Referenced repositories
+
+| Contribution           | URL                                  |
+|------------------------|--------------------------------------|
+| Tacotron2              | https://github.com/NVIDIA/tacotron2  |
+| Mellotron              | https://github.com/NVIDIA/mellotron  |
+| WaveGlow               | https://github.com/NVIDIA/waveglow   |
+| Korean text processing | https://github.com/keithito/tacotron |

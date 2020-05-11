@@ -1,6 +1,6 @@
 Pitchtron
 ============
-![](https://www.dropbox.com/s/6i8vgk03glz0ztz/Pitchtron_logo.png?dl=1)
+![](pitchtron_logo.png)
 
 * Prosody transfer toolkit where you don't need stylish training DB.
 * We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies.
@@ -28,7 +28,7 @@ Differences of three branches
 * **: Hard pitchtron allows limited non-parallel referencing.
     * Limited non-parallel: the text can differ, but the structure of the sentence must match.
    
-        |           | Sentence                                        |
+|           | Sentence                                        |
 |-----------|-------------------------------------------------|
 | Reference | "아니요 지는 그짝허고 이야기허고 싶지 않아요"   |
 | Target    | "그래요 갸는 친구허고 나들이가고 싶은것 같아요" |
@@ -57,7 +57,7 @@ Differences of three branches
 * Pitch range of reference audio is scaled to fit that of target speaker so that inter-gender transfer is more natural.
 * Your control over pitch is not so strict that it will only scale to the amount it sounds natural.
 
-![Soft pitchtron](https://www.dropbox.com/s/50xcdx7jpp4ml4q/Soft%20pitchtron.png?dl=1)
+![Soft pitchtron](soft_pitchtron.png)
 
 **2. Hard pitchtron**
 -------------------------
@@ -66,7 +66,7 @@ Differences of three branches
 * Pitch range of reference audio is scaled to fit that of target speaker so that inter-gender transfer is more natural.
 * You have strict control over pitch range, to the amount where it will scale even if it results in unnatural sound.
 
-![Hard pitchtron](https://www.dropbox.com/s/jy6fc3ow3bgqe6d/Hard%20pitchtron.png?dl=1)
+![Hard pitchtron](Hard_pitchtron.png)
 
 **3. Global style token**
 ---------------------------
@@ -76,4 +76,4 @@ Differences of three branches
 * Pitch range cannot be scaled, resulting noisy sound if reference audio is out of vocal range of target speaker.
 * Since it is not robust to new style unseen during training, it sometimes generates speech with too loud energy or too long pause.
 
-![GST](https://www.dropbox.com/s/3fpk70d0v0dhtt3/GST.png?dl=1)
+![GST](gst.png)

@@ -10,8 +10,8 @@ import matplotlib.rcsetup as rcsetup
 print(rcsetup.all_backends)
 
 
-big_E_path="/mnt/sdc1/mellotron_experiment/gst_token_weight_manipulation/mellotron/sample-t16-s34-000_target_speaker-fy17_referende_speaker-fy17-proposed800.wav"
-small_E_path = "/mnt/sdc1/mellotron_experiment/gst_token_weight_manipulation/mellotron/sample-t16-s34-000_target_speaker-fy17_referende_speaker-fy17-proposed.wav"
+big_E_path="/mnt/sdc1/pitchtron_experiment/gst_token_weight_manipulation/pitchtron/sample-t16-s34-000_target_speaker-fy17_referende_speaker-fy17-proposed800.wav"
+small_E_path = "/mnt/sdc1/pitchtron_experiment/gst_token_weight_manipulation/pitchtron/sample-t16-s34-000_target_speaker-fy17_referende_speaker-fy17-proposed.wav"
 
 mel1, _ = get_mel_and_f0(big_E_path, hparams.filter_length, hparams.hop_length, hparams.win_length, hparams.n_mel_channels, hparams.sampling_rate, hparams.mel_fmin, hparams.mel_fmax, hparams.f0_min, hparams.f0_max, hparams.harm_thresh)
 mel2, _ = get_mel_and_f0(small_E_path, hparams.filter_length, hparams.hop_length, hparams.win_length, hparams.n_mel_channels, hparams.sampling_rate, hparams.mel_fmin, hparams.mel_fmax, hparams.f0_min, hparams.f0_max, hparams.harm_thresh)

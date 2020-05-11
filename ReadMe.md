@@ -57,7 +57,7 @@ Differences of three branches
 * Pitch range of reference audio is scaled to fit that of target speaker so that inter-gender transfer is more natural.
 * Your control over pitch is not so strict that it will only scale to the amount it sounds natural.
 
-![Soft_pitchtron](ReadMes/soft_pitchtron.png)
+![Soft_pitchtron](soft_pitchtron.png)
 
 **2. Hard pitchtron**
 -------------------------
@@ -66,7 +66,7 @@ Differences of three branches
 * Pitch range of reference audio is scaled to fit that of target speaker so that inter-gender transfer is more natural.
 * You have strict control over pitch range, to the amount where it will scale even if it results in unnatural sound.
 
-![Hard_pitchtron](ReadMes/Hard_pitchtron.png)
+![Hard_pitchtron](Hard_pitchtron.png)
 
 **3. Global style token**
 ---------------------------
@@ -76,7 +76,7 @@ Differences of three branches
 * Pitch range cannot be scaled, resulting noisy sound if reference audio is out of vocal range of target speaker.
 * Since it is not robust to new style unseen during training, it sometimes generates speech with too loud energy or too long pause.
 
-![GST](ReadMes/gst.png)
+![GST](gst.png)
 # Preprocessing steps to run for multi-speaker Korean TTS
 ```
 python preprocess.py --dataset={following keywords}

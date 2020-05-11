@@ -189,7 +189,7 @@ python inferent_soft_pitchtron.py
 **2. Hard pitchtron**
 ---
 ```
-python inference_different_speaker_relative_f0_scale.py 
+python inference_hard_pitchtron.py 
 ```
 
 **3. GST**

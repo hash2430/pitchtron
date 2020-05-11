@@ -1,0 +1,11 @@
+matplotlib==2.1.0
+tensorflow==1.15
+inflect==0.2.5
+librosa==0.6.0
+scipy==1.0.0
+tensorboardX==1.8
+Unidecode==1.0.22
+pillow
+nltk==3.4.5
+jamo==0.4.1
+music21

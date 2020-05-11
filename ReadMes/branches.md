@@ -1,6 +1,6 @@
 Pitchtron
 ============
-![](pitchtron_logo.png)
+![pitchtron](pitchtron_logo.png "pitchtron")
 
 * Prosody transfer toolkit where you don't need stylish training DB.
 * We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies.

@@ -1,1 +1,1 @@
-Pitchtron (branch: soft)
+hard pitchtron

@@ -2,7 +2,7 @@ Pitchtron
 ============
 ![](pitchtron_logo.png)
 
-* Prosody transfer toolkit with which you can generate stylish speeches even though they are not included at training DB.
+* Prosody transfer toolkit with which you can generate stylish speeches even though your training DB is neutral voices from ordinary people.
 * We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies as well as neutral dialogues.
 * Hard pitchtron is for strictly transferring the prosody thus, the sentence structure of reference audio and target sentence better match.
 * Soft pitchtron pursues natural sounding prosody transfer even the reference audio and target sentence are totally different in content.

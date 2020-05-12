@@ -6,7 +6,7 @@ Pitchtron
 * We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies as well as neutral dialogues.
 * Hard pitchtron is for strictly transferring the prosody thus, the sentence structure of reference audio and target sentence better match.
 * Soft pitchtron pursues natural sounding prosody transfer even the reference audio and target sentence are totally different in content.
-* The DB we are releasing with this project [emotion_tts](https://github.com/emotiontts/emotiontts_open_db)  
+* The DB we are releasing with this project is available at [emotion_tts](https://github.com/emotiontts/emotiontts_open_db)  
 * Audio samples are available at http://sunghee.kaist.ac.kr/entry/pitchtron
 
 Differences of three branches

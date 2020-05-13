@@ -150,6 +150,7 @@ python preprocess.py --dataset=integrate_dataset
 * Prepare separate train, valid filelists for single speaker 
 * Files for single speaker training and validation are also included in multispeaker filelists.
 * I experimented training initial 30 epochs with single speaker DB and it helped learning encoder-decoder alignment a lot.
+
 How to train?
 ===============
 

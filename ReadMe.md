@@ -201,7 +201,7 @@ python inference_gst_tts.py
 Acknowledgements
 ============
 1. This material is based upon work supported by the Ministry of Trade, Industry & Energy (MOTIE, Korea) under Industrial Technology Innovation Program (No. 10080667, Development of conversational speech synthesis technology to express emotion and personality of robots through sound source diversification).
-2. I got help regarding grapheme to phoneme coversion from this guy => https://github.com/lifefeel
+2. I got help regarding grapheme to phoneme coversion from this awsome guy => https://github.com/lifefeel
 3. Referenced repositories
 
 | Contribution           | URL                                  |

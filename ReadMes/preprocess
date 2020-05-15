@@ -1,0 +1,42 @@
+# Preprocess
+I did not do trimming while preprocessing. I might add energy based VAD for trimming later.
+I use 22050 Hz for all dataset.
+## LibriTTS
+1. Change the directory of libritts clean train 100 to point your path in 'filelists/libritts_train_clean_100_audiopath_text_sid_atleast5min_val_filelist.txt', 'filelists/libritts_train_clean_100_audiopath_text_sid_shorterthan10s_atleast5min_train_filelist.txt'
+2. Separate some files from train list and create test list because audio of test sentence is required at test time and you do not want to input the audio that you have already used for training. I am not using libri tts test clean corpus because that has different speakers than the training set.
+3. Down sample LibriTTS to 22050 Hz. I have made script for that.
+    ```angular2html
+    python preprocess.py --dataset=libri_tts
+    ``` 
+## Korean selvas_multi
+1. Put all the selvas speakers in the folder you would like and run the following
+    ```angular2html
+    python preprocess.py --dataset=selvas_multi
+    ```
+Database directory and output directory for the meta list file needs to be modified from the preprocess.py file. I am too lazy and I hardcoded the path.
+## Integrate dataset for multi_lingual use
+1. The command below will merge the meta file for preprocessed dataset and generate one integrated meta file with language(or corpus) code at the end.
+    ```angular2html
+    python preprocess.py --dataset=integrate_dataset
+    ```
+2. Modify hparams to point to the integrated training filelist and valid filelist when you train
+    ```angular2html
+    python train.py -o out -l log --hparams="training_files=/home/administrator/projects/mellotron/filelists/libritts_selvas_multi_train.txt, validation_files=/home/administrator/projects/mellotron/filelists/libritts_selvas_multi_eval.txt"
+    ```
+    
+    ### Warning
+    1. Language code is decided by the order of file_lists given in preprocess.integrate_dataset()
+    2. Depending on language code(i.e., corpus), the text preprocess(normalize, g2p, grapheme to code, phoneme to code) differs.
+    3. By default, language code is assumed as follows, thus you need to give file_list paths of multiple corpora in matching order when you integrate datasets.
+    Below also shows textpreprocessing for each corpus
+    ```angular2html
+    0: English LibriTTS DB 
+       (text preprocessing: 
+           english normalizer
+           g2p using cmudict,
+           grapheme to symbol code or phoneme to symbol code) 
+    1: Korean selvas_multi DB
+       (text preprocessing:
+           phoneme to symbol code)
+ 
+    ```

@@ -2,11 +2,12 @@ Pitchtron
 ============
 ![](pitchtron_logo.png)
 
-* Prosody transfer toolkit with which you can generate stylish speeches even though they are not included at training DB.
+* Prosody transfer toolkit with which you can generate stylish speeches even though your training DB is neutral voices from ordinary people.
 * We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies as well as neutral dialogues.
 * Hard pitchtron is for strictly transferring the prosody thus, the sentence structure of reference audio and target sentence better match.
 * Soft pitchtron pursues natural sounding prosody transfer even the reference audio and target sentence are totally different in content.
-* The DB we are releasing with this project [emotion_tts](https://github.com/emotiontts/emotiontts_open_db)  
+* The DB we are releasing with this project is available at [emotion_tts](https://github.com/emotiontts/emotiontts_open_db)  
+* **Audio samples** are available at http://sunghee.kaist.ac.kr/entry/pitchtron
 
 Differences of three branches
 ====================
@@ -149,6 +150,7 @@ python preprocess.py --dataset=integrate_dataset
 * Prepare separate train, valid filelists for single speaker 
 * Files for single speaker training and validation are also included in multispeaker filelists.
 * I experimented training initial 30 epochs with single speaker DB and it helped learning encoder-decoder alignment a lot.
+
 How to train?
 ===============
 
@@ -200,7 +202,8 @@ python inference_gst_tts.py
 Acknowledgements
 ============
 1. This material is based upon work supported by the Ministry of Trade, Industry & Energy (MOTIE, Korea) under Industrial Technology Innovation Program (No. 10080667, Development of conversational speech synthesis technology to express emotion and personality of robots through sound source diversification).
-2. Referenced repositories
+2. I got help regarding grapheme to phoneme coversion from this awesome guy => [Jeongpil_Lee](https://github.com/lifefeel)
+3. Referenced repositories
 
 | Contribution           | URL                                  |
 |------------------------|--------------------------------------|

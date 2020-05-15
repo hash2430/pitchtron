@@ -5,8 +5,8 @@ from librosa.core import dtw
 import numpy as np
 hparams = create_hparams()
 reference_path = '/mnt/sdd1/selvas_wav/pfo/wav_trimmed_22050/pfo00036.wav'
-original_path = "/mnt/sdc1/mellotron_experiment/linear_manipulation/vlre_1D/sample-000_target_speaker-pfo_referende_speaker-pfo-vlre_1D_original.wav"
-half_path = "/mnt/sdc1/mellotron_experiment/linear_manipulation/vlre_1D/sample-000_target_speaker-pfo_referende_speaker-pfo-vlre_1D_0.5.wav"
+original_path = "/mnt/sdc1/pitchtron_experiment/linear_manipulation/vlre_1D/sample-000_target_speaker-pfo_referende_speaker-pfo-vlre_1D_original.wav"
+half_path = "/mnt/sdc1/pitchtron_experiment/linear_manipulation/vlre_1D/sample-000_target_speaker-pfo_referende_speaker-pfo-vlre_1D_0.5.wav"
 def align_dtw(true, gst, dim):
     _, idx = dtw(X=true, Y=gst, backtrack=True)
     idx_t = idx.transpose()

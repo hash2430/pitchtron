@@ -300,7 +300,7 @@ if __name__ == '__main__':
     print("gst       {:7.2f}% {:7.2f}% {:7.2f}% {:5.2f} dB".format(GPEs[0].item()*100, VDEs[0].item()*100, FFEs[0].item()*100, MCDs[0].item()))
     print("vlre_1D   {:7.2f}% {:7.2f}% {:7.2f}% {:5.2f} dB".format(GPEs[1].item() * 100, VDEs[1].item() * 100,
                                                                         FFEs[1].item() * 100, MCDs[1].item()))
-    print("mellotron {:7.2f}% {:7.2f}% {:7.2f}% {:5.2f} dB".format(GPEs[2].item() * 100, VDEs[2].item() * 100,
+    print("pitchtron {:7.2f}% {:7.2f}% {:7.2f}% {:5.2f} dB".format(GPEs[2].item() * 100, VDEs[2].item() * 100,
                                                                             FFEs[2].item() * 100, MCDs[2].item()))
     print("grl_0.08  {:7.2f}% {:7.2f}% {:7.2f}% {:5.2f} dB".format(GPEs[3].item() * 100, VDEs[3].item() * 100,
                                                                             FFEs[3].item() * 100, MCDs[3].item()))

@@ -33,12 +33,12 @@ stft = TacotronSTFT(hparams.filter_length, hparams.hop_length, hparams.win_lengt
                     hparams.n_mel_channels, hparams.sampling_rate, hparams.mel_fmin,
                     hparams.mel_fmax)
 # speaker = "fv02"
-checkpoint_path ='/mnt/sdc1/mellotron/grl_200224/checkpoint_291000'
-f0s_meta_path = '/mnt/sdc1/mellotron/single_init_200123/f0s_combined.txt'
-    # "models/mellotron_libritts.pt"
-mellotron = load_model(hparams).cuda().eval()
-mellotron.load_state_dict(torch.load(checkpoint_path)['state_dict'])
-waveglow_path = '/home/admin/projects/mellotron_init_with_single/models/waveglow_256channels_v4.pt'
+checkpoint_path ='/mnt/sdc1/pitchtron/grl_200224/checkpoint_291000'
+f0s_meta_path = '/mnt/sdc1/pitchtron/single_init_200123/f0s_combined.txt'
+    # "models/pitchtron_libritts.pt"
+pitchtron = load_model(hparams).cuda().eval()
+pitchtron.load_state_dict(torch.load(checkpoint_path)['state_dict'])
+waveglow_path = '/home/admin/projects/pitchtron_init_with_single/models/waveglow_256channels_v4.pt'
 waveglow = torch.load(waveglow_path)['model'].cuda().eval()
 denoiser = Denoiser(waveglow).cuda().eval()
 arpabet_dict = cmudict.CMUDict('data/cmu_dictionary')
@@ -79,7 +79,7 @@ for key, value in speaker_ids.items():
         # x: (text_padded, input_lengths, mel_padded, max_len,
         #                  output_lengths, speaker_ids, f0_padded),
         # y: (mel_padded, gate_padded)
-        x, y = mellotron.parse_batch(batch)
+        x, y = pitchtron.parse_batch(batch)
         text_encoded = x[0]
         mel = x[2]
         pitch_contour = x[6]
@@ -100,11 +100,11 @@ for key, value in speaker_ids.items():
 
         with torch.no_grad():
             # get rhythm (alignment map) using tacotron 2
-            mel_outputs, mel_outputs_postnet, gate_outputs, rhythm, reference_speaker_predicted1= mellotron.forward(x)
+            mel_outputs, mel_outputs_postnet, gate_outputs, rhythm, reference_speaker_predicted1= pitchtron.forward(x)
             rhythm = rhythm.permute(1, 0, 2)
 
             # Using mel as input is not generalizable. I hope there is generalizable inference method as well.
-            mel_outputs, mel_outputs_postnet, gate_outputs, _, reference_speaker_predicted2 = mellotron.inference_noattention(
+            mel_outputs, mel_outputs_postnet, gate_outputs, _, reference_speaker_predicted2 = pitchtron.inference_noattention(
                 (text_encoded, mel, speaker_id, pitch_contour, rhythm))
 
         with torch.no_grad():
@@ -113,4 +113,4 @@ for key, value in speaker_ids.items():
             top_db=25
             for j in range(len(audio)):
                 wav, _ = librosa.effects.trim(audio[j], top_db=top_db, frame_length=2048, hop_length=512)
-                write("/mnt/sdc1/mellotron_experiment/different_speaker_subjective_test/grl_002/{}/sample-{:03d}_target-{}_refer-{}-grl002-relative-rescaled-f0.wav".format(reference_speaker, i * hparams.batch_size + j, speaker, reference_speaker), hparams.sampling_rate, wav)
+                write("/mnt/sdc1/pitchtron_experiment/different_speaker_subjective_test/grl_002/{}/sample-{:03d}_target-{}_refer-{}-grl002-relative-rescaled-f0.wav".format(reference_speaker, i * hparams.batch_size + j, speaker, reference_speaker), hparams.sampling_rate, wav)

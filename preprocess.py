@@ -70,8 +70,8 @@ def integrate_dataset(args):
     #     'filelists/libritts_train_clean_100_audiopath_text_sid_shorterthan10s_atleast5min_train_filelist.txt',
     #     'filelists/train_file_list.txt']
     # eval_file_lists = [
-    #     '/home/administrator/projects/mellotron/filelists/libritts_train_clean_100_audiopath_text_sid_atleast5min_val_filelist.txt',
-    #     '/home/administrator/projects/mellotron/filelists/valid_file_list.txt']
+    #     '/home/administrator/projects/pitchtron/filelists/libritts_train_clean_100_audiopath_text_sid_atleast5min_val_filelist.txt',
+    #     '/home/administrator/projects/pitchtron/filelists/valid_file_list.txt']
     # test_file_lists = [
     #     'filelists/libritts_train_clean_100_audiopath_text_sid_shorterthan10s_atleast5min_test_filelist.txt',
     #     'filelists/test_file_list.txt']
@@ -80,16 +80,16 @@ def integrate_dataset(args):
     # target_eval_file_list = 'filelists/libritts_selvas_multi_eval.txt'
     # target_test_file_list = 'filelists/libritts_selvas_multi_test.txt'
 
-    train_file_lists = ['/home/administrator/projects/mellotron/filelists/train_file_list_pron.txt',
-                        '/home/administrator/projects/mellotron/filelists/public_korean_train_file_list_pron.txt'
+    train_file_lists = ['/home/administrator/projects/pitchtron/filelists/train_file_list_pron.txt',
+                        '/home/administrator/projects/pitchtron/filelists/public_korean_train_file_list_pron.txt'
     ]
 
-    eval_file_lists = ['/home/administrator/projects/mellotron/filelists/valid_file_list_pron.txt',
-                       '/home/administrator/projects/mellotron/filelists/public_korean_valid_file_list_pron.txt'
+    eval_file_lists = ['/home/administrator/projects/pitchtron/filelists/valid_file_list_pron.txt',
+                       '/home/administrator/projects/pitchtron/filelists/public_korean_valid_file_list_pron.txt'
     ]
 
-    test_file_lists = ['/home/administrator/projects/mellotron/filelists/test_file_list_pron.txt',
-                       '/home/administrator/projects/mellotron/filelists/public_korean_test_file_list_pron.txt'
+    test_file_lists = ['/home/administrator/projects/pitchtron/filelists/test_file_list_pron.txt',
+                       '/home/administrator/projects/pitchtron/filelists/public_korean_test_file_list_pron.txt'
     ]
 
     target_train_file_list = 'filelists/merge_korean_pron_train.txt'

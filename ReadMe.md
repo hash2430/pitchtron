@@ -199,6 +199,12 @@ python inference_hard_pitchtron.py
 ```
 python inference_gst_tts.py 
 ```
+Tips!
+===========
+* To prevent cracking sound, the reference audio vocal range needs to be scaled to the target speaker vocal range.
+* That part is implemented in our code, but the target speaker vocal range is calculated coarsely by sampling just 10 audios and taking the max-min as variance.
+* You will get **much better sound** if you use more **accurate statistics** for target speaker vocal range.
+
 Acknowledgements
 ============
 1. This material is based upon work supported by the Ministry of Trade, Industry & Energy (MOTIE, Korea) under Industrial Technology Innovation Program (No. 10080667, Development of conversational speech synthesis technology to express emotion and personality of robots through sound source diversification).

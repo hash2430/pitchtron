@@ -172,6 +172,8 @@ python train.py {program arguments}
 
 **3. Pretrained models**
 -----------------------
+*Pretrained models are trained on phoneme. They expect phoneme as input when you give texts to synthesize.
+
 | Model              | Pretrained checkpoint | Matching hyperparameters |
 |--------------------|-----------------------|:------------------------:|
 |   Soft pitchtron   |[Soft pitchtron](https://www.dropbox.com/s/z2y0ts8luo288tt/checkpoint_soft_pitchtron?dl=1)|[configs](https://www.dropbox.com/s/z2y0ts8luo288tt/checkpoint_soft_pitchtron?dl=1)                          |

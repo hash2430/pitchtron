@@ -1,6 +1,6 @@
 Pitchtron
 ============
-![](pitchtron_logo.png)
+<p align="center"><img src="./pitchtron_logo.png"></p>
 
 * Prosody transfer toolkit with which you can generate stylish speeches even though your training DB is neutral voices from ordinary people.
 * We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies as well as neutral dialogues.

@@ -8,6 +8,7 @@ Pitchtron
 * Soft pitchtron pursues natural sounding prosody transfer even the reference audio and target sentence are totally different in content.
 * The DB we are releasing with this project is available at [emotion_tts](https://github.com/emotiontts/emotiontts_open_db)  
 * **Audio samples** are available at http://sunghee.kaist.ac.kr/entry/pitchtron
+* Paper: [Pitchtron](https://arxiv.org/abs/2005.10456)
 
 Differences of three branches
 ====================

@@ -16,16 +16,16 @@ class Classifier(nn.Module):
         x = self.output(x)
         return x
 
-class GradientReversalLayer(nn.Module):
-    def __init__(self):
-        super(GradientReversalLayer, self).__init__()
-
-    def forward(self, x):
+class GradientReversalLayer(torch.autograd.Function):
+    @staticmethod
+    def forward(ctx, x):
+        ctx.save_for_backward(x)
         return x
-
-    def backward(self, grad_output):
-        return -1 * grad_output
+    @staticmethod
+    def backward(ctx, grad_output):
+        x = ctx.saved_tensors
+        return -1 * grad_output * x[0]
 
 def gradient_reversal_layer(x):
-    grl = GradientReversalLayer()
+    grl = GradientReversalLayer.apply
     return grl(x)

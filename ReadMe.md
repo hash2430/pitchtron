@@ -1,6 +1,6 @@
 Pitchtron
 ============
-![](pitchtron_logo.png)
+<p align="center"><img src="./pitchtron_logo.png"></p>
 
 * Prosody transfer toolkit with which you can generate stylish speeches even though your training DB is neutral voices from ordinary people.
 * We can transfer Korean dialects(Kyongsang, Cheolla) and emotive prosodies as well as neutral dialogues.
@@ -8,6 +8,7 @@ Pitchtron
 * Soft pitchtron pursues natural sounding prosody transfer even the reference audio and target sentence are totally different in content.
 * The DB we are releasing with this project is available at [emotion_tts](https://github.com/emotiontts/emotiontts_open_db)  
 * **Audio samples** are available at http://sunghee.kaist.ac.kr/entry/pitchtron
+* Pitchtron paper: https://arxiv.org/abs/2005.10456
 
 Differences of three branches
 ====================
@@ -59,16 +60,12 @@ Differences of three branches
 * Pitch range of reference audio is scaled to fit that of target speaker so that inter-gender transfer is more natural.
 * Your control over pitch is not so strict that it will only scale to the amount it sounds natural.
 
-![Soft_pitchtron](soft_pitchtron.png)
-
 **2. Hard pitchtron**
 -------------------------
 * This branch provides unsupervised parallel and 'limited non-parallel' unsupervised prosody transfer.
 * Instead, the rhythm and pitch are exactly the same as reference audio.
 * Pitch range of reference audio is scaled to fit that of target speaker so that inter-gender transfer is more natural.
 * You have strict control over pitch range, to the amount where it will scale even if it results in unnatural sound.
-
-![Hard_pitchtron](Hard_pitchtron.png)
 
 **3. Global style token**
 ---------------------------
@@ -78,7 +75,6 @@ Differences of three branches
 * Pitch range cannot be scaled, resulting noisy sound if reference audio is out of vocal range of target speaker.
 * Since it is not robust to new style unseen during training, it sometimes generates speech with too loud energy or too long pause.
 
-![GST](gst.png)
 # Preprocessing steps to run for multi-speaker Korean TTS
 ```
 python preprocess.py --dataset={following keywords}
@@ -172,9 +168,11 @@ python train.py {program arguments}
 
 **3. Pretrained models**
 -----------------------
+*Pretrained models are trained on phoneme. They expect phoneme as input when you give texts to synthesize.
+
 | Model              | Pretrained checkpoint | Matching hyperparameters |
 |--------------------|-----------------------|:------------------------:|
-|   Soft pitchtron   |[Soft pitchtron](https://www.dropbox.com/s/z2y0ts8luo288tt/checkpoint_soft_pitchtron?dl=1)|[configs](https://www.dropbox.com/s/z2y0ts8luo288tt/checkpoint_soft_pitchtron?dl=1)                          |
+|   Soft pitchtron   |[Soft pitchtron](https://www.dropbox.com/s/z2y0ts8luo288tt/checkpoint_soft_pitchtron?dl=1)|[configs](https://www.dropbox.com/s/89uxyd9jj4d5b8t/config_soft_pitchtron.py?dl=1)                          |
 |   Hard pitchtron   |[Hard pitchtron](https://www.dropbox.com/s/fsu84dprmire76s/checkpoint_hard_pitchtron?dl=1)|[configs](https://www.dropbox.com/s/tsr5ib4a1lyzggq/config_hard_pitchtron.py?dl=1)                          |
 | Global style token |[GST](https://www.dropbox.com/s/3okwrwrytyx2bcx/checkpoint_gst?dl=1)|[configs](https://www.dropbox.com/s/ub81eq7aq8esx53/config_gst.py?dl=1)                          |
 | WaveGlow vocoder   |[WaveGlow](https://drive.google.com/file/d/1Rm5rV5XaWWiUbIpg5385l5sh68z2bVOE/view)                       |       -                   |
@@ -199,11 +197,18 @@ python inference_hard_pitchtron.py
 ```
 python inference_gst_tts.py 
 ```
+Tips!
+===========
+* To prevent cracking sound, the reference audio vocal range needs to be scaled to the target speaker vocal range.
+* That part is implemented in our code, but the target speaker vocal range is calculated coarsely by sampling just 10 audios and taking the max-min as variance.
+* You will get **much better sound** if you use more **accurate statistics** for target speaker vocal range.
+
 Acknowledgements
 ============
 1. This material is based upon work supported by the Ministry of Trade, Industry & Energy (MOTIE, Korea) under Industrial Technology Innovation Program (No. 10080667, Development of conversational speech synthesis technology to express emotion and personality of robots through sound source diversification).
 2. I got help regarding grapheme to phoneme coversion from this awesome guy => [Jeongpil_Lee](https://github.com/lifefeel)
-3. Referenced repositories
+3. This repository is author implementation of following paper => (Pitchtron) https://arxiv.org/abs/2005.10456
+4. Referenced repositories
 
 | Contribution           | URL                                  |
 |------------------------|--------------------------------------|
